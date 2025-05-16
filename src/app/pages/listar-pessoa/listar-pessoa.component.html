@@ -10,9 +10,9 @@
         </a>
       </th>
     </tr>
-    <tr>
-      <td></td>
-      <td></td>
+    <tr *ngFor="let pessoa of pessoas">
+      <td>{{pessoa.nome}}</td>
+      <td>{{pessoa.idade}}</td>
       <td class="text-center" style="width: 300px">
         <a href="#" title="Editar" alt="Editar" class="btn btn-xs btn-info">
           <i class="fa fa-edit" aria-hidden="true"></i> Editar
@@ -24,4 +24,4 @@
     </tr>
   </tbody>
 </table>
-<p>Nenhuma pessoa cadastrada.</p>
+<p *ngIf="pessoas.length===0">Nenhuma pessoa cadastrada.</p>
