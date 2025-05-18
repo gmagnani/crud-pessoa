@@ -4,10 +4,12 @@ import { Pessoa } from '../../shared/models/pessoa.model';
 import { PessoaService } from '../../services/pessoa.service';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NumericoDirective } from '../../shared/directives/numerico.directive';
+import { MinimoValidatorDirective } from '../../shared/directives/minimo-validator.directive';
 
 @Component({
   selector: 'app-inserir-pessoa',
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, NumericoDirective, MinimoValidatorDirective],
   templateUrl: './inserir-pessoa.component.html',
   styleUrl: './inserir-pessoa.component.css',
 })

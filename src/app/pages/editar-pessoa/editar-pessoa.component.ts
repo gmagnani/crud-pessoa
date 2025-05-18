@@ -4,10 +4,18 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PessoaService } from '../../services/pessoa.service';
 import { Pessoa } from '../../shared/models/pessoa.model';
 import { CommonModule } from '@angular/common';
+import { NumericoDirective } from '../../shared/directives/numerico.directive';
+import { MinimoValidatorDirective } from '../../shared/directives/minimo-validator.directive';
 
 @Component({
   selector: 'app-editar-pessoa',
-  imports: [CommonModule,FormsModule, RouterModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    NumericoDirective,
+    MinimoValidatorDirective,
+  ],
   templateUrl: './editar-pessoa.component.html',
   styleUrl: './editar-pessoa.component.css',
 })
@@ -34,10 +42,10 @@ export class EditarPessoaComponent implements OnInit {
   atualizar(): void {
     // Verifica se o formulário é válido
     if (this.formPessoa.form.valid) {
-    // Efetivamente atualiza a pessoa
-    this.pessoaService.atualizar(this.pessoa);
-    // Redireciona para /pessoas/listar
-    this.router.navigate(['/pessoas']);
+      // Efetivamente atualiza a pessoa
+      this.pessoaService.atualizar(this.pessoa);
+      // Redireciona para /pessoas/listar
+      this.router.navigate(['/pessoas']);
     }
   }
 }
