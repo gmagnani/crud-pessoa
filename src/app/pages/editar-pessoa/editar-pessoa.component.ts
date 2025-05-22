@@ -2,10 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PessoaService } from '../../services/pessoa.service';
-import { Pessoa } from '../../shared/models/pessoa.model';
+import { Pessoa } from '../../shared';
 import { CommonModule } from '@angular/common';
-import { NumericoDirective } from '../../shared/directives/numerico.directive';
-import { MinimoValidatorDirective } from '../../shared/directives/minimo-validator.directive';
+import { NgxMaskDirective } from 'ngx-mask';
+import { SharedModule } from '../../shared';
 
 @Component({
   selector: 'app-editar-pessoa',
@@ -13,8 +13,8 @@ import { MinimoValidatorDirective } from '../../shared/directives/minimo-validat
     CommonModule,
     FormsModule,
     RouterModule,
-    NumericoDirective,
-    MinimoValidatorDirective,
+    NgxMaskDirective,
+    SharedModule,
   ],
   templateUrl: './editar-pessoa.component.html',
   styleUrl: './editar-pessoa.component.css',
